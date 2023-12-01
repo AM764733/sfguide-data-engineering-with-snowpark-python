@@ -30,12 +30,12 @@ def get_snowpark_session() -> Session:
     # otherwise configure from environment variables
     elif "SNOWSQL_ACCOUNT" in os.environ:
         snowpark_config = {
-            "account": os.environ["SNOWSQL_ACCOUNT"],
-            "user": os.environ["SNOWSQL_USER"],
-            "password": os.environ["SNOWSQL_PWD"],
-            "role": os.environ["SNOWSQL_ROLE"],
-            "warehouse": os.environ["SNOWSQL_WAREHOUSE"],
-            "database": os.environ["SNOWSQL_DATABASE"],
+            "account": 'ya99627.ap-southeast-1',
+            "user": 'amanlearning',
+            "password": "Taylor@123",
+            "role": "HOL_ROLE",
+            "warehouse": "HOL_WH",
+            "database": "HOL_DB",
             "schema": os.environ["SNOWSQL_SCHEMA"]
         }
         SnowflakeConnection().connection = Session.builder.configs(snowpark_config).create()
